@@ -1,0 +1,27 @@
+break   -   breaks out of a loop or a switch block
+case   -   marks a block of code in switch statements
+char   -  single char data type
+const  - defines a constant 
+continue  -  continues to the nest iteration of a loop
+default   -  specifies the deafult block of code in a switch statement
+do  	  - used together with while to create a do/while loop
+double	  - a data type that is usually 64 bits long which can store fractional numbers
+else 	-	used in conditional statements
+enum	-	deflares an enumerated type
+float 	-	a data type thath is usually 32 bits long which can store fractional numbers
+for 	- for loop
+goto 	- jump to the line specified by a label
+if	- make a conditional statement 
+int	- a data type that is usually 32 bits long which can store whole numbers
+long 	- ensures that an integer is at least 32 bits long ( use long long to ensure 64 bits )
+return 	- return a value from a function
+short	- reduces the size of an integer to 16 bits
+signed	- specifies that an int or char can represent both positive and negative values 
+sizeof 	- returns the amount of memory 
+static 	- specifies that a variable in a function keeps its value after the function ends
+struct 	- defines a structure
+switch 	- selects one of many code blocks to be executed
+typedef - defines a custom data type
+unsigned - specifies that an int or char should only represent positive values
+void 	- does not return a value or specifies a pointer to a data with an unspecified type
+while 	- loop
