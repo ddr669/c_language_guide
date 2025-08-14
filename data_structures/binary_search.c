@@ -4,11 +4,9 @@
 // 
 // i know that a array isn't a BinaryTree
 // BUT soon will have a REAL BinaryTree created with that array
-
 struct BinaryTree {
 	int array[ARRAYSIZE];
 };
-
 int compare(int x, int y){
 	if(x > y){
 		return 1;
@@ -52,19 +50,16 @@ void sortTree(struct BinaryTree *array, int length){
 		sortTree(array, arraysize-1);
 	}	
 };
-int binarySearch(struct BinaryTree array, int target){
-	// TODO 
-	int half_array = (sizeof(array.array) / 4) / 2;
-	int mid_array[half_array];
-	int array_size = sizeof(array.array) / 4;
-
-	/*if (array.array < target){
+int binarySearch(struct BinaryTree *array, int target, int low, int high){
+	if (high >= low){
+		int mid = low + (high -low) / 2;printf("mid %d-; low %d-; high %d-;", mid, low, high);
+		for(int i=low;i!=high;i++){printf("%d", array->array[i]);};printf("\n");
+		if(array->array[mid] == target){return mid;}
+		if(array->array[mid] > target){return binarySearch(array, target, low, mid);}
+		if (array->array[mid] < target){return binarySearch(array, target, mid, high);}
 	}
-	else if (array.array > target){
-	}*/
-	return 0;
+	return -1;
 };
-
 void showArray(struct BinaryTree array){
 	// Pass through the array and show The Value and The Key //
 	int len_array = sizeof(array.array) / 4;
@@ -80,13 +75,13 @@ void getArray(struct BinaryTree *array){
 		array->array[i] = numbers[i];
 	};
 };
-
-
 int main(int args, char **argv[]){
+	char argvs_[10];
 	struct BinaryTree array;
 	void sortTree(struct BinaryTree*, int length);
 	void showArray(struct BinaryTree);
 	void getArray(struct BinaryTree*);
+	int binarySearch(struct BinaryTree*, int target, int low, int high);
 	int numbers[10];
 	int arraysize = ARRAYSIZE;
 	numbers[0] = 1;numbers[1] = 4; 
@@ -100,5 +95,12 @@ int main(int args, char **argv[]){
 	// sort to make a BinarySearch
 	sortTree(&array, arraysize);
 	showArray(array);
+	printf("\n");
+	printf("BinarySearch->\n");
+	int some_number;
+	some_number = 5;
+	printf("%d", some_number);
+	int resultado = binarySearch(&array, some_number, 0, arraysize);
+	printf("%d\n", resultado);
 	return 0;
 };
