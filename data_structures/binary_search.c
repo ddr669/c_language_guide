@@ -31,6 +31,18 @@ void showTime(struct BinaryTree *array, int length, int low)
 	}
 	printf("\n");
 }
+
+void bubbleSort(struct BinaryTree *array, int length, int ini_value, int method){
+	// ini_value = array.array[0] whatever
+	// method = 0 | 1 - 0 to pass through array by 0 : or on the contrary
+	int arraysize = length;
+	int array_value = array->array[ini_value];
+	int compare_check = 0;
+	int last_value;
+	showTime(array, arraysize, 0);
+	
+}
+
 void sortTree(struct BinaryTree *array, int length){
 	void showTime(struct BinaryTree*, int length, int low);
 	int arraysize = length;
@@ -44,8 +56,7 @@ void sortTree(struct BinaryTree *array, int length){
 		if(i > 0){
 			if (array->array[i] >= array->array[i-1]){
 				compare_check = compare_check + 1;
-			}
-			else{
+			}else{
 				temp_check = array->array[i];
 				array->array[i] = array->array[i-1];
 				array->array[i-1] = temp_check;
@@ -133,18 +144,20 @@ void getArray(struct BinaryTree *array){
 	printf("]\n");
 	
 };
+
 int main(int args, char **argv[]){
 	char argvs_[10];
 	struct BinaryTree array;
 	void sortTree(struct BinaryTree*, int length);
 	void showArray(struct BinaryTree);
 	void getArray(struct BinaryTree*);
+	void bubbleSort(struct BinaryTree*, int length, int ini_value, int method);
 	int binarySearch(struct BinaryTree*, int target, int low, int high);
 	int arraysize = ARRAYSIZE;
 	srand(time(NULL));
 	getArray(&array);
 	// sort to make a BinarySearch
-	sortTree(&array, arraysize);
+	/*sortTree(&array, arraysize);
 	printf("\n");
 	printf("BinarySearch->\n");
 	int some_number = 25;
@@ -153,7 +166,12 @@ int main(int args, char **argv[]){
 		printf("The value %d is not in %d#~:array", some_number, &array);
 	}else{
 		printf("value %d in cell %d\n", some_number ,resultado);
-	}
+	}*/
+	bubbleSort(&array, arraysize, 0, 0);
+
+
+
+
 
 	return 0;
 };
