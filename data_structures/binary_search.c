@@ -25,16 +25,13 @@ void showTime(struct BinaryTree *array, int length, int low)
 			sleep_ms(1);
 			printf("\b \b");
 			sleep_ms(1);	
-			fflush(stdout);
-			
+			fflush(stdout);	
 		}
 		printf("%d ", array->array[i]);
 	}
 	printf("\n");
-
 }
 void sortTree(struct BinaryTree *array, int length){
-	
 	void showTime(struct BinaryTree*, int length, int low);
 	int arraysize = length;
 	int not_sorted = 1;
@@ -65,7 +62,6 @@ void sortTree(struct BinaryTree *array, int length){
 			}	
 		}
 	}
-	
 	if (compare_check == arraysize){
 		return;
 	}
@@ -81,11 +77,9 @@ int binarySearch(struct BinaryTree *array, int target, int low, int high){
 	if (high > low){
 		int mid = low + (high -low) / 2;
 		showTime(array, high, low);
-
 		if(array->array[mid] == target){return mid;}
 		if(array->array[mid] > target){return binarySearch(array, target, low, mid);}
 		if (array->array[mid] < target){return binarySearch(array, target, mid, high);}
-
 	}
 	return -1;
 };
@@ -105,12 +99,8 @@ int random_number(int min_num, int max_num){
 		low_num = max_num + 1;
 		hi_num = min_num;
 	}
-//	srand(time(NULL));
-	
-//	sleep_ms(160);
+	sleep_ms(25);
 	result = (rand() % (hi_num- low_num)) + low_num;
-	
-
 	return result;
 };
 
@@ -119,16 +109,15 @@ void getArray(struct BinaryTree *array){
 	void sleep_ms(int mil);
 	int len_array = sizeof(array->array) / 4;
 	int numbers[ARRAYSIZE];
-	printf("loading random numbers ");fflush(stdout);
+	printf("loading random numbers ");
+	fflush(stdout);
 	for(int a =0; a!= len_array; a++){
-		numbers[a] = random_number(0, 955);
-//		sleep_ms(160);
+		numbers[a] = random_number(0, 50);
 		if (len_array < 100 && len_array < 300){
 			if (a % 2 == 0){printf(".");fflush(stdout);}
 		}else{
 			if (a % 6 == 0){printf(".");fflush(stdout);}
 		}
-		//sleep_ms(85*6);
 	}
 	printf("100%; complete\n"); 
 	fflush(stdout);
@@ -152,16 +141,13 @@ int main(int args, char **argv[]){
 	void getArray(struct BinaryTree*);
 	int binarySearch(struct BinaryTree*, int target, int low, int high);
 	int arraysize = ARRAYSIZE;
-	
-	// change the BinaryTree->array to the same as numbers 
+	srand(time(NULL));
 	getArray(&array);
-	// SHOW 
 	// sort to make a BinarySearch
 	sortTree(&array, arraysize);
 	printf("\n");
 	printf("BinarySearch->\n");
-	int some_number;
-	some_number = 200;
+	int some_number = 25;
 	int resultado = binarySearch(&array, some_number, 0, arraysize);
 	if(resultado == -1){
 		printf("The value %d is not in %d#~:array", some_number, &array);
