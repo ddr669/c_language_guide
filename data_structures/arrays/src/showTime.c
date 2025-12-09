@@ -1,5 +1,6 @@
 #include "showTime.h"
 
+#define TIMESTOP 2
 
 void showTime(struct ArrayLike *array, int length, int low)
 {
@@ -10,7 +11,7 @@ void showTime(struct ArrayLike *array, int length, int low)
 			fflush(stdout);
 			//sleep_ms(1);
 			printf("\b \b");
-			sleep_ms(1);	
+			sleep_ms(TIMESTOP);	
 			fflush(stdout);	
 		}
 		printf("%d ", array->array[i]);
