@@ -3,6 +3,9 @@
 #include "src/showTime.h"
 #include "src/sleep_ms.h"
 
+
+#define TIMESTOP 2
+
 void showBubble(struct ArrayLike *array, int length,int pos_colored, int red_colored){
 	
 	for(int i=0; i!= length; i++){
@@ -14,9 +17,9 @@ void showBubble(struct ArrayLike *array, int length,int pos_colored, int red_col
 			printf(" %d ", array->array[i]);
 			fflush(stdout);
 		}
-		
+		sleep_ms(TIMESTOP);
 	}
-	sleep_ms(2);
+	sleep_ms(TIMESTOP);
 	printf("\n");
 }
 
