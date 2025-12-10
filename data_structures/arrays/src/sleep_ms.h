@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #if defined (_WIN64)
     #include <windows.h>
-    #define usleep Sleep
+    //#define usleep Sleep
 #elif defined __WIN64__
 	#include <windows.h>
 #elif defined __CYGWIN__
