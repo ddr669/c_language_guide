@@ -2,5 +2,5 @@
 
 
 struct ArrayLike {
-	int array[ARRAYSIZE];
+	int array[ARRAYSIZE01];
 };
