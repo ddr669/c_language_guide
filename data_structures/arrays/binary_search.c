@@ -5,15 +5,15 @@
 #include "src/random_number.h"
 #include "src/array_struct.h"
 
-#if !defined ARRAYSIZE
-#define ARRAYSIZE 20
-#endif
+//#if !defined ARRAYSIZE
+//#define ARRAYSIZE 20
+//#endif
 
 void sortTree(struct ArrayLike *array, int length){
 	int arraysize = length;
 	int not_sorted = 1;
 	 
-	showTime(array, ARRAYSIZE, 0);
+	showTime(array, ARRAYSIZE01, 0);
 	int compare_check = 0;
 	int temp_check;
 
@@ -75,7 +75,7 @@ void showArray(struct ArrayLike array){
 void getArray(struct ArrayLike *array){
 
 	int len_array = sizeof(array->array) / 4;
-	int numbers[ARRAYSIZE];
+	int numbers[ARRAYSIZE01];
 	printf("loading random numbers ");
 	fflush(stdout);
 	for(int a =0; a!= len_array; a++){
@@ -109,7 +109,7 @@ int main(int args, char **argv[]){
 	void getArray(struct ArrayLike*);
 	void bubbleSort(struct ArrayLike*, int length);
 	int binarySearch(struct ArrayLike*, int target, int low, int high);
-	int arraysize = ARRAYSIZE;
+	int arraysize = ARRAYSIZE01;
 
 	srand(time(NULL));
 	getArray(&array);
