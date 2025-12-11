@@ -1,10 +1,10 @@
 #ifndef ARRAY_STRUCT_H
 #define ARRAY_STRUCT_H
-
-#define ARRAYSIZE01 25
+#if !defined ARRAYSIZE01
+#define ARRAYSIZE01 10
 
 struct ArrayLike {
-    int array[ARRAYSIZE01];
+	int array[ARRAYSIZE01];
 };
-
+#endif
 #endif
