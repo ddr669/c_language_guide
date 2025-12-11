@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 
+#include "src/binary_search.h"
 #include "src/showTime.h"
 #include "src/random_number.h"
 #include "src/array_struct.h"
@@ -57,7 +58,7 @@ void randPopArray(struct ArrayLike *array, int toPop){
 	printf("loading random numbers ");
 	fflush(stdout);
 	for(int a =0; a!= len_array; a++){
-		numbers[a] = random_number(0, 999);
+		numbers[a] = random_number(0, 99);
 		if (len_array < 100 && len_array < 300){
 			if(a % 2 == 0){
 				printf(".");
@@ -90,32 +91,31 @@ int main(int args, char **argv[]){
 	void showArray(struct ArrayLike*);
 	void randPopArray(struct ArrayLike*, int toPop);
 
-
-
-	int arraysize = ARRAYSIZE01 - (255);
+	int inputArraySize = 70; // ArraySize
+				 // ARRAYSIZE01
+	
+	int arraysize = inputArraySize;
 
 	srand(time(NULL));
 	randPopArray(&array, arraysize);
-	struct ArrayLike copy = array;
-/////////////////////////////////////////////// 
-///	BinarySearch with quicksort:
+	struct ArrayLike copy = array; 
+//	BinarySearch with quicksort:
 //	sort to make a BinarySearch
 	sortArray(&array, arraysize);
 	
-	//printf("<Press Enter to continue to Cocktail_Sort>");
-	//fflush(stdout);
+	printf("<Press Enter to continue to Cocktail_Sort>");
+	fflush(stdout);
+	getchar();
+	printf("\n");
+	printf("BinarySearch->\n");
+	int some_number = 25;
+	int resultado = binarySearch(&array, some_number, 0, arraysize);
+	if(resultado == -1){
+		printf("The value %d is not in array\n", some_number);
+	}else{
+		printf("value %d in cell %d\n", some_number ,resultado);
+	}
 
-//	printf("\n");
-//	printf("BinarySearch->\n");
-//	int some_number = 25;
-//	int resultado = binarySearch(&array, some_number, 0, arraysize);
-//	if(resultado == -1){
-//		printf("The value %d is not in %d#~:array", some_number, &array);
-//	}else{
-//		printf("value %d in cell %d\n", some_number ,resultado);
-//	}
-//	
-/////////////////////////////////////////////////////
 
 	cocktailSort(&copy, arraysize);
 
