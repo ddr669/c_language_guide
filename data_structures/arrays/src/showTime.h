@@ -7,6 +7,8 @@
 
 #include "array_struct.h"
 
+#define TIMESTOP 1
+
 void showTime(struct ArrayLike *array, int length, int low);
 
 #endif
