@@ -1,1 +1,1 @@
-gcc binary_search.c src/*.c
+gcc main.c src/*.c
