@@ -4,7 +4,7 @@
 #include "src/showTime.h"
 #include "src/random_number.h"
 #include "src/array_struct.h"
-#include "src/bubble.h"
+#include "src/cocktail.h"
 
 //#if !defined ARRAYSIZE
 //#define ARRAYSIZE 20
@@ -126,7 +126,7 @@ int main(int args, char **argv[]){
 //	
 /////////////////////////////////////////////////////
 
-	bubbleSort(&copy, arraysize);
+	cocktailSort(&copy, arraysize);
 
 	return 0;
 };
