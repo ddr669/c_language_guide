@@ -1,1 +1,1 @@
-gcc --debug -o a.out binary_search.c src/sleep_ms.c src/showTime.c src/random_number.c bubbleSort.c
+gcc binary_search.c src/*.c
