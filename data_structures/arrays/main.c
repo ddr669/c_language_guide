@@ -6,9 +6,8 @@
 #include "src/array_struct.h"
 #include "src/cocktail.h"
 
-//#if !defined ARRAYSIZE
-//#define ARRAYSIZE 20
-//#endif
+
+
 
 void sortArray(struct ArrayLike *array, int length){
 	int arraysize = length;
@@ -48,21 +47,17 @@ void sortArray(struct ArrayLike *array, int length){
 	
 };
 
-void showArray(struct ArrayLike *array){
-	int len_array = sizeof(array->array) / sizeof(array->array[0]);
-	for(int i=0; i!= len_array; i++){
-		printf("[%d]->%d\n", i,array->array[i]);
-	}
-};
-
-void randPopArray(struct ArrayLike *array){
+void randPopArray(struct ArrayLike *array, int toPop){
 	// Populate pointer to Array
-	int len_array = sizeof(array->array) / 4;
-	int numbers[ARRAYSIZE01];
+	if (toPop < 0){
+		toPop = 1;
+	}
+	int len_array = toPop;
+	int numbers[len_array];
 	printf("loading random numbers ");
 	fflush(stdout);
 	for(int a =0; a!= len_array; a++){
-		numbers[a] = random_number(100, 2451550);
+		numbers[a] = random_number(0, 999);
 		if (len_array < 100 && len_array < 300){
 			if(a % 2 == 0){
 				printf(".");
@@ -93,26 +88,22 @@ int main(int args, char **argv[]){
 	struct ArrayLike array;
 	void sortArray(struct ArrayLike*, int length);
 	void showArray(struct ArrayLike*);
-	void randPopArray(struct ArrayLike*);
-	//void bubbleSort(struct ArrayLike*, int length);
-	//int binarySearch(struct ArrayLike*, int target, int low, int high);
-	int arraysize = ARRAYSIZE01;
+	void randPopArray(struct ArrayLike*, int toPop);
+
+
+
+	int arraysize = ARRAYSIZE01 - (255);
 
 	srand(time(NULL));
-	randPopArray(&array);
+	randPopArray(&array, arraysize);
 	struct ArrayLike copy = array;
 /////////////////////////////////////////////// 
 ///	BinarySearch with quicksort:
 //	sort to make a BinarySearch
 	sortArray(&array, arraysize);
 	
-	printf("%i ARRAYSIZE\n%i real arraysize\n%i Array itens",
-			arraysize,
-			sizeof(array),
-			sizeof(array.array)/4);
 	//printf("<Press Enter to continue to Cocktail_Sort>");
 	//fflush(stdout);
-	getchar();
 
 //	printf("\n");
 //	printf("BinarySearch->\n");
