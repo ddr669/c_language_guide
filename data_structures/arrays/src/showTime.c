@@ -1,6 +1,6 @@
 #include "showTime.h"
 
-#define TIMESTOP 2
+#define TIMESTOP 0.2
 
 void showTime(struct ArrayLike *array, int length, int low)
 {
@@ -9,7 +9,6 @@ void showTime(struct ArrayLike *array, int length, int low)
 		for(int a=0;a!= 2; a++){
 			printf("%d", a);
 			fflush(stdout);
-			//sleep_ms(1);
 			printf("\b \b");
 			sleep_ms(TIMESTOP);	
 			fflush(stdout);	
