@@ -1,4 +1,4 @@
-#include "random_number.h"
+#include "headers/random_number.h"
 #include <stdlib.h>
 
 int random_number(int min_num, int max_num){

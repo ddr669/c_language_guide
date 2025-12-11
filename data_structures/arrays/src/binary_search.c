@@ -1,4 +1,4 @@
-#include "binary_search.h"
+#include "headers/binary_search.h"
 
 int binarySearch(struct ArrayLike *array, int target, int low, int high){
 	if (high-low == 1){

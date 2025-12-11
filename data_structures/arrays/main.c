@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <time.h>
 
-#include "src/binary_search.h"
-#include "src/showTime.h"
-#include "src/random_number.h"
-#include "src/array_struct.h"
-#include "src/cocktail.h"
+#include "src/headers/binary_search.h"
+#include "src/headers/showTime.h"
+#include "src/headers/random_number.h"
+#include "src/headers/array_struct.h"
+#include "src/headers/cocktail.h"
 
 
 
