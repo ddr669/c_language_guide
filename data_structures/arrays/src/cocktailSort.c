@@ -16,32 +16,36 @@ void showBubble(struct ArrayLike *array,
 		int pos_colored,
 		int red_colored){
 	int color_grade = 0;
+	int timeScale   = 4;
 	for(int i=0;i!=length;i++){
 		if(i==pos_colored){
-			printf("\033[0;32m %d \033[0m", array->array[i]);
+			printf("\033[0;32m%d\033[0m ", array->array[i]);
+			//printf("\b \b");
+			fflush(stdout);
 		}else if(i==red_colored){
-			printf("\033[0;31m %d \033[0m", array->array[i]);
+			printf("\033[0;31m%d\033[0m ", array->array[i]);
+			//printf("\b \b");
+			fflush(stdout);
 		}else{
 			color_grade = (30 + 0);
-			printf("\033[0;%dm %d \033[0m",
+			printf("\033[0;%dm%d\033[0m ",
 					color_grade,
 					array->array[i]);
+			//printf("\b \b");
 			fflush(stdout);
 		}
-		sleep_ms(TIMESTOP);
+		sleep_ms(TIMESTOP/timeScale);
 	}
-	sleep_ms(TIMESTOP);
+	sleep_ms(TIMESTOP/timeScale);
 	printf("\n");
 }
 
 
 void cocktailSort(struct ArrayLike *array, int length){
-
 	int arraysize = length;
 	int compare_check = 0;
 	int pivot = 0;
 	int last_value = 0;
-	
 	int red_value = arraysize;
 	int temp_value;
 	int tmp_val;

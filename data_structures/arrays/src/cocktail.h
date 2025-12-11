@@ -8,5 +8,5 @@
 void cocktailSort(struct ArrayLike *array, int length);
 #endif
 
-#define TIMESTOP 0.2
+#define TIMESTOP 1
 
