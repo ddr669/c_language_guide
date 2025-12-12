@@ -40,12 +40,32 @@ void interactShell(){
 	CLS_STDIO;										// clean STDIO
 	char event[255];
 	char *ptr = (char *) calloc(255, sizeof(char));
-	
+	char quit[8] = {"q"};
 	//ptr = &event;	
 	//char *ptr = (char *) calloc(255, sizeof(char));
-	while (event != "o"){
+	int color_c = 0;
+	while (event != quit){
+		sleep_ms(800);
 		CLS_STDIO;
-		printf("%d\n\r", event);
-		scanf("%d", &event);
+		for (int i=0; i!= 120; i++){
+			switch(color_c){
+				case 1:
+					MOD_BG_COLORRGB("\n\r",i, 20, 20);
+				case 2:
+					MOD_BG_COLORRGB("\n\r",20, i, 20);
+				case 3:
+					MOD_BG_COLORRGB("\n\r",20, 20, i);
+				default:
+					MOD_BG_COLORRGB("\n\r",i,i,i);
+			}
+			//fflush(stdout);
+		}
+		if (color_c > 3){
+			color_c = 0;
+		}else{
+			color_c = color_c + 1;
+		}
+		//printf("%s\n\r", event);
+		//scanf("%s", &event);
 	}
 }

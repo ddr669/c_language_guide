@@ -4,7 +4,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/wait.h>
 #include "sleep_ms.h"
 
 #include "array_struct.h"

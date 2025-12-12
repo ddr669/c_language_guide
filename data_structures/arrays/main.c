@@ -91,7 +91,7 @@ int main(int args, char **argv[]){
 	void showArray(struct ArrayLike*);
 	void randPopArray(struct ArrayLike*, int toPop);
 
-	int inputArraySize = 70; // ArraySize
+	int inputArraySize = 25; // ArraySize
 				 // ARRAYSIZE01
 	
 	int arraysize = inputArraySize;
@@ -117,7 +117,7 @@ int main(int args, char **argv[]){
 	}
 
 
-	//cocktailSort(&copy, arraysize);
+	cocktailSort(&copy, arraysize);
 	interactShell();
 	return 0;
 };
