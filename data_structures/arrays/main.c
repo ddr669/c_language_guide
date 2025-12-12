@@ -117,7 +117,7 @@ int main(int args, char **argv[]){
 	}
 
 
-	cocktailSort(&copy, arraysize);
-
+	//cocktailSort(&copy, arraysize);
+	interactShell();
 	return 0;
 };
