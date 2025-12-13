@@ -10,12 +10,14 @@
 #include "src/headers/randPopArray.h"
 
 int main(int args, char **argv[]){
-	
-	int inputArraySize = 25;
-	int arraysize = inputArraySize;
 
+	struct ArrayLike array;
+
+	int inputArraySize = 50;
+	int arraysize 	   = inputArraySize;
+	int rangeTarget    = 99;
 	srand(time(NULL));
-	randPopArray(&array, arraysize);
+	randPopArray(&array, arraysize, rangeTarget);
 	struct ArrayLike copy = array; 
 
 	//	sort to make a BinarySearch
@@ -23,7 +25,7 @@ int main(int args, char **argv[]){
 	
 	printf("<Press Enter to continue to Cocktail_Sort>");
 	fflush(stdout);
-	getchar();
+	//getchar();
 	printf("\n");
 	printf("BinarySearch->\n");
 

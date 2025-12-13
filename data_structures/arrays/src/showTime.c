@@ -3,7 +3,7 @@
 
 void showTime(struct ArrayLike *array, int length, int low)
 {
-	int timeScale = 4;
+	int timeScale = 8;
 
 	for(int i=low; i!= length; i++){
 		for(int a=0;a!= 2; a++){

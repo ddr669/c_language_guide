@@ -20,18 +20,15 @@ void showBubble(struct ArrayLike *array,
 	for(int i=0;i!=length;i++){
 		if(i==pos_colored){
 			printf("\033[0;32m%d\033[0m ", array->array[i]);
-			//printf("\b \b");
 			fflush(stdout);
 		}else if(i==red_colored){
 			printf("\033[0;31m%d\033[0m ", array->array[i]);
-			//printf("\b \b");
 			fflush(stdout);
 		}else{
 			color_grade = (30 + 0);
 			printf("\033[0;%dm%d\033[0m ",
 					color_grade,
 					array->array[i]);
-			//printf("\b \b");
 			fflush(stdout);
 		}
 		sleep_ms(TIMESTOP/timeScale);

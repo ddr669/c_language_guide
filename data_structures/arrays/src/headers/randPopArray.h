@@ -5,5 +5,5 @@
 #include "random_number.h"
 
 #ifndef randPopArray
-void randPopArray(struct ArrayLike *array, int toPop);
+void randPopArray(struct ArrayLike *array, int toPop, int rangeTarget);
 #endif
