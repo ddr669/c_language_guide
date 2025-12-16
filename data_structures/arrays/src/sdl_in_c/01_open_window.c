@@ -8,7 +8,9 @@ static SDL_Window *window = NULL;
 static SDL_Renderer *renderer = NULL;
 
 /* -------------- */
-SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]){
+SDL_AppResult SDL_AppInit(void **appstate,
+	int argc,
+	char *argv[]){
 	SDL_SetAppMetadata("GUI to virtualizate a array sort", "1.0", "/x00");
 	if(!SDL_Init(SDL_INIT_VIDEO)){
 		SDL_Log("Couldn't initialize SDL: %s", SDL_GetError());
@@ -23,13 +25,15 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]){
 /* ----------- */
 SDL_AppResult SDL_AppEvent(void *appstate,SDL_Event *event){
 	if(event->type == SDL_EVENT_QUIT){
-		return SDL_APP_SUCCESS;}
+		return SDL_APP_SUCCESS;
+	}
 	switch(event->type){
-		case SDL_KEYDOWN:
-			printf("%c %d", event->key, event->key);
+		//case SDL_KEYDOWN:
+		//	printf("%c %d", event->key, event->key);
 	}
 		
-	return SDL_APP_CONTINUE;}
+	return SDL_APP_CONTINUE;
+}
 /* ----------- */
 SDL_AppResult SDL_AppIterate(void *appstate){
 	SDL_Delay(1000/60);
