@@ -1,0 +1,7 @@
+git clone <the repo>
+cd <whatever>
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+cmake --build . --config Release --parallel
+sudo cmake --install . --config Release
